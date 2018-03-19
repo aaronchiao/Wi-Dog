@@ -1,0 +1,56 @@
+$(function(){ 
+//右侧边栏
+$(window).bind("scroll", function(){
+    var top = $(this).scrollTop(); // 当前窗口的滚动距离
+    if(top>300){
+        $(".side").css("top",top-100);
+    }
+    if(top==0){
+        $(".side").css("top","0");
+    }
+});
+
+
+//滚轮情况下， 顶部菜单
+$(window).bind("scroll", function(){
+
+var top = $(this).scrollTop(); // 当前窗口的滚动距离
+
+if(top>170){
+var height = $("header").height();
+$(".header").addClass("heafixe");
+
+setTimeout(function(){
+	$("header").css("transition","all 1s");
+},100);
+setTimeout(function(){
+	$(".header").css("transform","translateY(0px)");
+},100);
+
+}else{
+	$(".header").removeClass("heafixe");
+setTimeout(function(){
+	$(".header").attr("style","");
+},200);
+	
+	
+	
+}
+    
+});
+
+
+//硬件页Tab切换
+//$(".buy-tab a").click(function(){
+//	var num = $(this).index(".buy-tab a")+1;
+//	$(".buy-tab a").removeClass("active");
+//	$(this).addClass("active");	
+//	$(".buy-info > div").hide();
+//	$(".tab-"+num).show();
+//})
+
+
+
+
+
+}); 
